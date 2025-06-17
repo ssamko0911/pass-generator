@@ -24,37 +24,37 @@ services:
     # please note that last definitions always *replace* previous ones
 
         # --- Character Configs ---
-        App\Service\Generator\SingleCharacter\Impl\SingleSpecialSymbolRandomCharacterGenerator:
-            arguments:
-                $config: '@App\Config\Character\Impl\SpecialSymbolCharacterConfig'
+    App\Service\Generator\SingleCharacter\Impl\SingleSpecialSymbolRandomCharacterGenerator:
+        arguments:
+            $config: '@App\Config\Character\Impl\SpecialSymbolCharacterConfig'
 
-        App\Service\Generator\SingleCharacter\Impl\SingleNumberRandomCharacterGenerator:
-            arguments:
-                $config: '@App\Config\Character\Impl\NumberCharacterConfig'
+    App\Service\Generator\SingleCharacter\Impl\SingleNumberRandomCharacterGenerator:
+        arguments:
+            $config: '@App\Config\Character\Impl\NumberCharacterConfig'
 
-        App\Service\Generator\SingleCharacter\Impl\SingleUppercaseRandomCharacterGenerator:
-            arguments:
-                $config: '@App\Config\Character\Impl\UppercaseLetterCharacterConfig'
+    App\Service\Generator\SingleCharacter\Impl\SingleUppercaseRandomCharacterGenerator:
+        arguments:
+            $config: '@App\Config\Character\Impl\UppercaseLetterCharacterConfig'
 
-        App\Service\Generator\SingleCharacter\Impl\SingleLowercaseRandomCharacterGenerator:
-            arguments:
-                $config: '@App\Config\Character\Impl\LowercaseLetterCharacterConfig'
+    App\Service\Generator\SingleCharacter\Impl\SingleLowercaseRandomCharacterGenerator:
+        arguments:
+            $config: '@App\Config\Character\Impl\LowercaseLetterCharacterConfig'
 
             # --- Multiple Character Generators (tagged) ---
-        App\Service\Generator\MultipleCharacter\Impl\MultipleSpecialSymbolRandomCharacterGenerator:
-            arguments:
-                $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleSpecialSymbolRandomCharacterGenerator'
+    App\Service\Generator\MultipleCharacter\Impl\MultipleSpecialSymbolRandomCharacterGenerator:
+        arguments:
+            $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleSpecialSymbolRandomCharacterGenerator'
 
-        App\Service\Generator\MultipleCharacter\Impl\MultipleNumberRandomCharacterGenerator:
-            arguments:
-                $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleNumberRandomCharacterGenerator'
+    App\Service\Generator\MultipleCharacter\Impl\MultipleNumberRandomCharacterGenerator:
+        arguments:
+            $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleNumberRandomCharacterGenerator'
 
-        App\Service\Generator\MultipleCharacter\Impl\MultipleUppercaseRandomCharacterGenerator:
-            arguments:
-                $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleUppercaseRandomCharacterGenerator'
-            tags: [ 'app.multiple_char_generator' ]
+    App\Service\Generator\MultipleCharacter\Impl\MultipleUppercaseRandomCharacterGenerator:
+        arguments:
+            $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleUppercaseRandomCharacterGenerator'
+        tags: [ 'app.multiple_char_generator' ]
 
-        App\Service\Generator\MultipleCharacter\Impl\MultipleLowercaseRandomCharacterGenerator:
-            arguments:
-                $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleLowercaseRandomCharacterGenerator'
-            tags: [ 'app.multiple_char_generator' ]
+    App\Service\Generator\MultipleCharacter\Impl\MultipleLowercaseRandomCharacterGenerator:
+        arguments:
+            $generator: '@App\Service\Generator\SingleCharacter\Impl\SingleLowercaseRandomCharacterGenerator'
+        tags: [ 'app.multiple_char_generator' ]
