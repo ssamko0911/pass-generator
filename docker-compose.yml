@@ -5,7 +5,7 @@ networks:
 
 services:
   app:
-    container_name: php
+    container_name: pass-generator-php
     env_file:
       - .env
     networks:
@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
 
   web:
-    container_name: dev-caddy
+    container_name: dev-caddy-pass-generator
     depends_on:
       - app
     ports:
